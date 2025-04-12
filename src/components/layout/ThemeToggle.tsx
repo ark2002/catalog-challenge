@@ -27,11 +27,12 @@ const ThemeToggle = () => {
     return (
         <button
             onClick={toggleTheme}
-            className="p-3 rounded-full bg-white dark:bg-gray-800 text-gray-800 dark:text-white shadow-md hover:shadow-xl dark:shadow-white/20 transition-all duration-300 cursor-pointer hover:scale-105 border-2 border-gray-300 dark:border-gray-600"
+            className="p-3 rounded-full bg-background dark:bg-background text-text-primary dark:text-text-primary shadow-md hover:shadow-xl dark:shadow-white/20 transition-all duration-300 cursor-pointer hover:scale-105 border-2 border-text-primary dark:border-text-secondary"
         >
             {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
         </button>
     );
+
 };
 
 export default ThemeToggle;
