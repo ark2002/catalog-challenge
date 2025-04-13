@@ -76,7 +76,7 @@ export default function AnalysisContainer() {
     }, [coinId, currency, fetchData]);
 
     return (
-        <div className="bg-background text-text-primary rounded-2xl shadow-xl space-y-6">
+        <div className="text-text-primary space-y-6">
             {loading ? (
                 <div className="space-y-4">
                     {Array.from({ length: 3 }).map((_, i) => (
