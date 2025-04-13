@@ -22,7 +22,7 @@
     font-family: 'Coinbase Sans';
     src: url('/src/assets/fonts/Coinbase_Sans-Regular-web-1.32.woff2') format('woff2');
     font-weight: 500;
-    font-style: italic;
+    font-style: normal;
     font-display: swap;
 }
 
@@ -37,7 +37,7 @@
 @font-face {
     font-family: 'Coinbase Sans';
     src: url('/src/assets/fonts/Coinbase_Sans-Bold-web-1.32.woff2') format('woff2');
-    font-weight: 800;
+    font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
@@ -45,22 +45,21 @@
 @theme {
     --font-sans: 'Coinbase Sans', sans-serif;
     --font-size: 16px;
-    --color-primary: oklch(50.82% 0.247 275.78);
-    --color-success: oklch(72.91% 0.146 144.82);
-    --color-error: oklch(0.65 0.21 27.59);
-    --color-text-primary: oklch(26.24% 0.044 264.91);
-    --color-text-secondary: oklch(54.89% 0.010 271.24);
-    --color-text-tertiary: oklch(80.10% 0.002 247.84);
-    --color-background: oklch(100.00% 0.000 0);
-
+    --color-primary: #4b40ee;
+    --color-success: #67bf6b;
+    --color-error: #f54940;
+    --color-text-primary: #1a243a;
+    --color-text-secondary: #6f7177;
+    --color-text-tertiary: #bdbebf;
+    --color-background: #ffffff;
 }
 
 .dark {
-    --color-primary: oklch(72.5% 0.247 275.78);
-    --color-success: oklch(64% 0.146 144.82);
-    --color-error: oklch(70% 0.21 27.59);
-    --color-text-primary: oklch(90% 0.044 264.91);
-    --color-text-secondary: oklch(70% 0.010 271.24);
-    --color-text-tertiary: oklch(50% 0.002 247.84);
-    --color-background: oklch(17% 0.02 264);
+    --color-primary: #828cff;
+    --color-success: #4aa350;
+    --color-error: #ff5b4f;
+    --color-text-primary: #d0defc;
+    --color-text-secondary: #9c9ea5;
+    --color-text-tertiary: #626364;
+    --color-background: #0b0f18;
 }

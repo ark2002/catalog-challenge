@@ -1,9 +1,12 @@
 import './App.css';
-import Main from './components/Main';
+import PricePage from './components/PricePage';
+import { CoinProvider } from './context/CoinContext';
 
 function App() {
   return (
-    <Main />
+    <CoinProvider>
+      <PricePage />
+    </CoinProvider>
   );
 }
 
