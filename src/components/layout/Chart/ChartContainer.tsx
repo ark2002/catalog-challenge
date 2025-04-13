@@ -109,26 +109,32 @@ export default function ChartContainer() {
                         </button>
                     )}
 
-                    <div className="flex items-center gap-3.75 w-full">
-                        {isFullScreen ? (
-                            <div className="flex items-center space-x-3">
-                                <img
-                                    src={selectedCoin?.image}
-                                    alt={selectedCoin?.name}
-                                    className="w-6 h-6 rounded-full border-2 border-text-tertiary"
-                                />
-                                <span className="text-md font-semibold text-text-primary">
-                                    {selectedCoin?.name} <span className="text-sm text-text-secondary">({selectedCoin?.symbol?.toUpperCase()})</span>
-                                </span>
-                                <span className={`text-sm font-semibold ${changeClass}`}>
-                                    {change.toFixed(2)}%
-                                </span>
-                            </div>
-                        ) : (
-                            <Button label="Fullscreen" icon={Maximize2} onClick={toggleFullScreen} />
-                        )}
-                        <Button label="Compare" icon={CirclePlus} />
-                        <div className="ml-auto mr-8">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-3.5 w-full">
+                        <div className="flex items-center gap-3.5">
+                            {isFullScreen ? (
+                                <div className="flex items-center gap-3">
+                                    <img
+                                        src={selectedCoin?.image}
+                                        alt={selectedCoin?.name}
+                                        className="w-6 h-6 rounded-full border-2 border-text-tertiary"
+                                    />
+                                    <span className="text-md font-semibold text-text-primary">
+                                        {selectedCoin?.name}{' '}
+                                        <span className="text-sm text-text-secondary">
+                                            ({selectedCoin?.symbol?.toUpperCase()})
+                                        </span>
+                                    </span>
+                                    <span className={`text-sm font-semibold ${changeClass}`}>
+                                        {change.toFixed(2)}%
+                                    </span>
+                                </div>
+                            ) : (
+                                <Button label="Fullscreen" icon={Maximize2} onClick={toggleFullScreen} />
+                            )}
+                            <Button label="Compare" icon={CirclePlus} />
+                        </div>
+
+                        <div className="sm:ml-auto sm:mt-0 mt-3">
                             <Tabs
                                 tabs={timeFrameTabs}
                                 activeTabIndex={activeTabIndex}
@@ -137,6 +143,7 @@ export default function ChartContainer() {
                             />
                         </div>
                     </div>
+
 
                     {loading ? (
                         <div className="w-full h-[400px] mt-6 bg-text-tertiary rounded-xl animate-pulse" />
