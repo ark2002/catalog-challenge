@@ -14,7 +14,6 @@ function PricePage() {
             <div className=" absolute top-7.5 right-7.5">
                 <ThemeToggle />
             </div>
-            {/* <Header /> */}
             <div className="p-7.5 pb-0">
                 <CoinHeading />
                 <div className="mt-5">

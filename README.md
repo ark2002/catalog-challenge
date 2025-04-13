@@ -1,54 +1,129 @@
-# React + TypeScript + Vite
+# Catalog Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 **[Live Demo](https://catalog-challenge.netlify.app/)**
 
-Currently, two official plugins are available:
+This project is a cryptocurrency dashboard built with **React**, **TypeScript**, and **Vite**. It provides real-time data visualization and analysis for cryptocurrencies using the CoinGecko API. The application is styled with **TailwindCSS** and includes features like theme toggling, interactive charts, and detailed coin statistics.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Real-Time Data**: Fetches live cryptocurrency data, including prices, market cap, and volume.
+- **Interactive Charts**: Displays price and volume trends with zoom and pan capabilities.
+- **Analysis Tools**: Provides insights like market trends, volatility, and risk levels.
+- **Responsive Design**: Fully responsive layout for desktop and mobile devices.
+- **Dark Mode**: Supports light and dark themes with a toggle button.
+- **Tab Navigation**: Organized content with tabs for Summary, Chart, Statistics, Analysis, and Settings.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Project Structure
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+The project is organized as follows:
+
+```
+src/
+├── components/       # UI components
+│   ├── layout/       # Layout-specific components (e.g., charts, summaries)
+│   ├── ui/           # Reusable UI components (e.g., buttons, tabs)
+├── context/          # React context for global state management
+├── hooks/            # Custom React hooks
+├── utils/            # Utility functions and constants
+├── App.tsx           # Main application component
+├── main.tsx          # Application entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+- **Node.js** (v16 or higher)
+- **npm** or **yarn**
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/catalog-challenge.git
+   cd catalog-challenge
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open the application in your browser at `http://localhost:5173`.
+
+### Build for Production
+
+To create a production build, run:
+```bash
+npm run build
+# or
+yarn build
 ```
+
+The build output will be in the `dist` directory.
+
+### Linting
+
+To lint the codebase, run:
+```bash
+npm run lint
+# or
+yarn lint
+```
+
+## API Integration
+
+The application uses the [CoinGecko API](https://www.coingecko.com/en/api) to fetch cryptocurrency data. The following endpoints are utilized:
+
+- `/coins/markets`: Fetch market data for a specific coin.
+- `/coins/{id}/market_chart`: Fetch historical price and volume data.
+
+## Key Components
+
+### `PricePage`
+
+The main page of the application, which includes:
+- A theme toggle button.
+- A coin heading displaying the selected coin's name, symbol, and price.
+- Tab navigation for switching between different sections.
+
+### `ChartContainer`
+
+Displays an interactive chart for price and volume trends using the **lightweight-charts** library.
+
+### `SummaryContainer`
+
+Shows key metrics like market cap, 24-hour volume, and supply details.
+
+### `AnalysisContainer`
+
+Provides insights into market trends, volatility, and risk levels.
+
+### `ThemeToggle`
+
+Allows users to switch between light and dark themes. The theme preference is saved in `localStorage`.
+
+## Customization
+
+### TailwindCSS
+
+The project uses TailwindCSS for styling. You can customize the theme by editing the `src/index.css` file.
+
+### ESLint
+
+The project includes a pre-configured ESLint setup for TypeScript and React. To enable type-aware linting, update the `eslint.config.js` file as described in the comments.
+
+## Acknowledgments
+
+- [CoinGecko API](https://www.coingecko.com/en/api) for cryptocurrency data.
+- [Lightweight Charts](https://tradingview.github.io/lightweight-charts/) for interactive charting.
+- [TailwindCSS](https://tailwindcss.com/) for styling.
