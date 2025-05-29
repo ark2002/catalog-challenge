@@ -5,6 +5,7 @@ export const contentTabs = [
     { label: "Chart", value: "chart" },
     { label: "Statistics", value: "statistics" },
     { label: "Analysis", value: "analysis" },
+    { label: "Social", value: "social" },
     { label: "Settings", value: "settings" },
 ]
 

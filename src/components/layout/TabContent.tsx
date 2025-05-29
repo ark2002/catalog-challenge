@@ -4,6 +4,7 @@ import ChartContainer from "./Chart/ChartContainer";
 import SummaryContainer from "./Summary/SummaryContainer";
 import StatisticsContainer from "./Statistics/StatsContainer";
 import AnalysisContainer from "./Analysis/AnalysisContainer";
+import SocialContainer from "./SocialContainer";
 import SettingsContainer from "./Settings/SettingsContainer";
 
 type TabComponentProps = {
@@ -38,6 +39,7 @@ export default function TabContent({ tabs, activeTabIndex }: TabComponentProps) 
                     {tabs[activeTabIndex].value === "chart" && <ChartContainer />}
                     {tabs[activeTabIndex].value === "statistics" && <StatisticsContainer />}
                     {tabs[activeTabIndex].value === "analysis" && <AnalysisContainer />}
+                    {tabs[activeTabIndex].value === "social" && <SocialContainer />}
                     {tabs[activeTabIndex].value === "settings" && <SettingsContainer />}
                 </motion.div>
             </AnimatePresence>

@@ -177,6 +177,24 @@ export default function AnalysisContainer() {
                         </p>
                     </div>
 
+                    {/* New Section: Whale Activity */}
+                    <div className="p-5 rounded-2xl border border-text-tertiary bg-gradient-to-br from-primary/10 to-background shadow-md ring-1 ring-text-tertiary/30 space-y-2">
+                        <p className="text-sm font-medium text-text-secondary">
+                            Whale Activity
+                        </p>
+                        <p className="text-base leading-relaxed">
+                            Whale activity is currently{" "}
+                            <span className={`font-semibold ${data.whaleActivity ? "text-error" : "text-success"}`}>
+                                {data.whaleActivity ? "detected" : "not detected"}
+                            </span>
+                            .
+                            {" "}
+                            {data.whaleActivity
+                                ? "This indicates significant transactions by large holders, which could impact price."
+                                : "No significant large volume transactions detected recently."}
+                        </p>
+                    </div>
+
                     {/* Row 3: Full width - Moving Averages */}
                     <div className="p-5 rounded-2xl border border-text-tertiary bg-gradient-to-br from-primary/10 to-background shadow-md ring-1 ring-text-tertiary/30 space-y-2">
                         <p className="text-sm font-medium text-text-secondary">
